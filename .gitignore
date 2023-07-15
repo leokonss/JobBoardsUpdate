@@ -1,5 +1,5 @@
 .idea
 target/
-local.properties
 debug.log
 screenshots/
+resources/local.properties

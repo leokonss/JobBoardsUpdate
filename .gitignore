@@ -1,0 +1,5 @@
+.idea
+target/
+local.properties
+debug.log
+screenshots/

@@ -19,7 +19,7 @@ public abstract class BaseTest {
     }
 
     @AfterMethod
-    protected void afterMethod(Method method, ITestResult testResult) throws IOException {
+    protected void afterMethod(Method method, ITestResult testResult) {
         if (!testResult.isSuccess()) {
             Utils.takeScreenshot(getDriver(), method.getName(), this.getClass().getName());
         }
@@ -49,14 +49,8 @@ public abstract class BaseTest {
         driver = null;
     }
 
-    protected BaseTest getWeb() {
+    protected void getWeb() {
         Utils.log("Get web page");
-        Utils.get(driver);
-        return this;
-    }
-
-    protected void getURL() {
-        Utils.log(driver.getCurrentUrl());
     }
 
     protected void nullWait5() {

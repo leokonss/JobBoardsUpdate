@@ -28,6 +28,8 @@ jobs:
         env:
           DICE_EMAIL: ${{ secrets.DICE_EMAIL }}
           DICE_PSWD: ${{ secrets.DICE_PSWD }}
+          MONSTER_EMAIL: ${{ secrets.MONSTER_EMAIL }}
+          MONSTER_PSWD: ${{ secrets.MONSTER_PSWD }}
         run: mvn -B package --file pom.xml
 
       - name: Attach screenshots and reports

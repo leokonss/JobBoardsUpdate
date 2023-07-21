@@ -13,6 +13,7 @@ public class DiceTest extends BaseTest {
     public static final String PSWD = System.getenv("DICE_PSWD");
     @Test
     public void testUpdateDice() throws InterruptedException {
+        getDriver().get("https://www.dice.com/dashboard/login");
         WebElement login = getWait5().until(ExpectedConditions.visibilityOfElementLocated(By.id("email")));
         login.clear();
         login.sendKeys(EMAIL);
@@ -42,7 +43,7 @@ public class DiceTest extends BaseTest {
 
         String previousSkill = skillsShadowRoot.findElement(By
                 .cssSelector("td[class='sc-dhi-candidates-meter sc-dhi-candidates-meter-s'] > span")).getText();
-        Utils.log(previousSkill);
+        Utils.log("Initial skill: " + previousSkill);
         skillsShadowRoot.findElement(By
                 .cssSelector("dhi-seds-core-button[class='skills-edit-action sc-dhi-candidates-candidate-profile-skills-view hydrated']"))
                 .getShadowRoot()
@@ -64,7 +65,7 @@ public class DiceTest extends BaseTest {
                 .getShadowRoot()
                 .findElement(By
                 .cssSelector("td[class='sc-dhi-candidates-meter sc-dhi-candidates-meter-s'] > span")).getText();
-        Utils.log(expectedSkill);
+        Utils.log("Updated skill: " + expectedSkill);
 
         Assert.assertTrue(expectedSkill.contains("Mobile"));
         Assert.assertNotEquals(previousSkill, expectedSkill, String.format("Previous skill - %s, new skill - %s", previousSkill, expectedSkill));

@@ -45,9 +45,9 @@ public class DiceTest extends BaseTest {
                 .cssSelector("td[class='sc-dhi-candidates-meter sc-dhi-candidates-meter-s'] > span")).getText();
         Utils.log("Initial skill: " + previousSkill);
         skillsShadowRoot.findElement(By
-                .cssSelector("dhi-seds-core-button[class='skills-edit-action sc-dhi-candidates-candidate-profile-skills-view hydrated']"))
+                .cssSelector("seds-button[class='skills-edit-action sc-dhi-candidates-candidate-profile-skills-view seds seds-mb-100 hydrated']"))
                 .getShadowRoot()
-                .findElement(By.cssSelector("button[class='secondary']"))
+                .findElement(By.cssSelector("button[class='seds-button seds-button-secondary']"))
                 .click();
 
         WebElement skillField = skillsShadowRoot

@@ -1,3 +1,5 @@
+package utils;
+
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -14,17 +16,17 @@ import java.util.Properties;
 
 public class Utils {
     private static final ChromeOptions chromeOptions = new ChromeOptions();
-    static WebDriver createDriver() {
+    public static WebDriver createDriver() {
         chromeOptions.addArguments("--headless", "--window-size=1920,1080");
         chromeOptions.addArguments("--no-sandbox");
         chromeOptions.addArguments("--disable-dev-shm-usage");
         return new ChromeDriver(chromeOptions);
     }
 
-    static void get(WebDriver driver) {
+    public static void get(WebDriver driver) {
         driver.get("https://www.dice.com/dashboard/login");
     }
-    static void takeScreenshot(WebDriver driver, String methodName, String className) {
+    public static void takeScreenshot(WebDriver driver, String methodName, String className) {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy_MM_dd_hhmmss");
         String date = simpleDateFormat.format(new Date());
 

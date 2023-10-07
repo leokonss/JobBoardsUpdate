@@ -1,7 +1,10 @@
+package tests;
+
 import model.DiceProfilePage;
 import model.DiceSignInPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import utils.Utils;
 
 public class DiceTest extends BaseTest {
     public static final String EMAIL = System.getenv("DICE_EMAIL");
